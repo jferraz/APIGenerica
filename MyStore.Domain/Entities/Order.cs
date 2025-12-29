@@ -1,6 +1,4 @@
-﻿using System.ComponentModel;
-
-namespace MyStore.Domain
+﻿namespace MyStore.Domain.Entities
 {
     public class Order
     {

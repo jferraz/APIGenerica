@@ -1,4 +1,4 @@
-﻿namespace MyStore.Domain
+﻿namespace MyStore.Domain.Entities
 {
     public class User
     {

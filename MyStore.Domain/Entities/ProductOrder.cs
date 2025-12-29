@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using MyStore.Domain.Dtos;
 
-namespace MyStore.Domain
+namespace MyStore.Domain.Entities
 {
     public class ProductOrder
     {

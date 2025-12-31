@@ -25,10 +25,10 @@ jobs:
           
 
       - name: Restore (solution)
-        run: dotnet restore ./MyStore.sln
+        run: dotnet restore ./APIGenerica.sln
 
       - name: Build (solution)
-        run: dotnet build ./MyStore.sln -c Release --no-restore
+        run: dotnet build ./APIGenerica.sln -c Release --no-restore
 
       - name: Test (solution)
-        run: dotnet test ./MyStore.sln -c Release --no-build
+        run: dotnet test ./APIGenerica.sln -c Release --no-build

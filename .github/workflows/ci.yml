@@ -1,0 +1,34 @@
+name: CI (.NET 9)
+
+on:
+  push:
+    branches: ["main", "develop", "feature/**"]
+    paths-ignore:
+      - "**/*.md"
+      - "**/*.txt"
+      - ".gitignore"
+  pull_request:
+    branches: ["main", "develop"]
+
+jobs:
+  build_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup .NET 9
+        uses: actions/setup-dotnet@v5
+        with:
+          dotnet-version: "9.0.x"
+          cache: true
+
+      - name: Restore (solution)
+        run: dotnet restore ./MyStore.sln
+
+      - name: Build (solution)
+        run: dotnet build ./MyStore.sln -c Release --no-restore
+
+      - name: Test (solution)
+        run: dotnet test ./MyStore.sln -c Release --no-build

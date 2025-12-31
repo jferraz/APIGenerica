@@ -12,4 +12,8 @@
     <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="12.1.1" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\MyStore.Domain\MyStore.Domain.csproj" />
+  </ItemGroup>
+
 </Project>

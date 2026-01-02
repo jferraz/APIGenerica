@@ -1,3 +1,4 @@
+using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using MyStore.Application.Products;
 using MyStore.Domain.Interfaces;
@@ -28,6 +29,11 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 
 var app = builder.Build();
 
+if (app.Environment.IsDevelopment())
+{
+    var mapper = app.Services.GetRequiredService<IMapper>();
+    mapper.ConfigurationProvider.AssertConfigurationIsValid();
+}
 // Swagger - sempre visível
 app.UseSwagger();
 app.UseSwaggerUI(c =>

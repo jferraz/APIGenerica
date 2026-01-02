@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using MyStore.Application.Dtos;
 using MyStore.Application.Products;
-using System.Runtime.CompilerServices;
+using AutoMapper;
 
 
 namespace MyStore.API.Controllers
@@ -9,19 +10,25 @@ namespace MyStore.API.Controllers
     [Route("api/[controller]")]
     public class ProductController : ControllerBase
     {
-        private readonly IProductService _service;
+        private readonly IProductService _service;      
 
         public ProductController(IProductService service)
         {
             _service = service;
         }
 
-        [HttpGet]
+        [HttpGet("GetAll")]
         public async Task<IActionResult> GetAll()
         {
             var products = await _service.GetAllAsync();
             return Ok(products);
         }
 
+        [HttpPost("Create")]
+        public async Task<IActionResult> Create([FromBody] CreateProductDto product)
+        {            
+            await _service.CreateAsync(product);
+            return Ok(product);
+        }
     }
 }

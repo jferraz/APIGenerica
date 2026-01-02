@@ -9,6 +9,7 @@ namespace MyStore.Application.Mappings
         public MappingProfile()
         {
             CreateMap<Product, ProductDto>().ReverseMap();
+            CreateMap<Product, CreateProductDto>().ReverseMap();
             CreateMap<Order, OrderDto>().ReverseMap();
             CreateMap<ProductOrder, ProductOrderDto>().ReverseMap();
             CreateMap<User, UserDto>().ReverseMap();

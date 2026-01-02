@@ -1,4 +1,4 @@
-﻿namespace MyStore.Domain.Dtos
+﻿namespace MyStore.Application.Dtos
 {
     public class UserDto
     {

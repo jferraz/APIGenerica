@@ -12,6 +12,9 @@ builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IProductService, ProductService>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 
+//Automapper
+builder.Services.AddAutoMapper(typeof(MyStore.Application.Mappings.MappingProfile));
+
 // Controllers
 builder.Services.AddControllers();
 

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyStore.Application.User
+namespace MyStore.Application.Orders
 {
-    public interface IUserService
+    public class OrderService : IOrderService
     {
     }
 }

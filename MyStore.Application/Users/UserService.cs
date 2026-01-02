@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyStore.Application.User
+namespace MyStore.Application.Users
 {
     public class UserService : IUserService
     {

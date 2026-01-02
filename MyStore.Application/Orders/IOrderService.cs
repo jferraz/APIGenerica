@@ -1,4 +1,4 @@
-﻿namespace MyStore.Application.Order
+﻿namespace MyStore.Application.Orders
 {
     public interface IOrderService
     {
